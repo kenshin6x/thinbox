@@ -1,0 +1,32 @@
+{% extends "mobile/base_site.html" %}
+{% load i18n %}
+
+{% block extrahead %}
+    {{ form.media }}
+{% endblock %}
+
+{% block page %}
+    <div data-role="page" data-theme="b" id="login-page">
+    
+        <div data-role="header" data-theme="b">
+            <h1>Thinbox</h1>
+
+            <div class="ui-bar ui-bar-a">
+                <h2>{{state}}</h2>
+            </div>
+
+        </div>
+        
+        <div data-role="content">    
+            <div class="ui-bar ui-bar-c">
+                <form method="post" name="form" action="" data-ajax="false">
+                    {% csrf_token %}
+                    {% include "mobile/base/form_fields.html" with form=form submit_value="Log in" %}
+                
+                    <input type="submit" name="submit" id="submit" data-theme="b" value="Log in"/>    
+                </form>
+            </div>
+        </div>
+        
+    </div>
+{% endblock %}

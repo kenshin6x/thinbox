@@ -1,0 +1,33 @@
+{% extends "mobile/base_site.html" %}
+
+{% block page %}
+    <div data-role="page" data-theme="b" id="gateway_home-page" data-add-back-btn="true">
+        
+        <div data-role="header" data-theme="b">
+            {% include "mobile/base/header_title.html" with title="Gateway" %}
+        </div>
+        
+        <div data-role="content">
+            <ul data-role="listview" data-theme="c" data-dividertheme="a">
+                <li data-role="list-divider">{{gateway.name}}</li>
+                
+                <li><a data-transition="none" href="{% url interface_list gateway.id %}">Interfaces</a></li>
+                <li><a data-transition="none" href="#wireless_home-page">Wireless</a></li>
+                <li><a data-transition="none" href="#bridge-page">Bridge</a></li>
+                <li><a data-transition="none" href="#mesh-page">Mesh</a></li>
+                <li><a data-transition="none" href="#ppp-page">PPP</a></li>
+                <li><a data-transition="none" href="#ip-page">IP</a></li>
+                <li><a data-transition="none" href="#routing-page">Routing</a></li>
+                <li><a data-transition="none" href="#system-page">System</a></li>
+                <li><a data-transition="none" href="#queues-page">Queues</a></li>
+                <li><a data-transition="none" href="#files-page">Files</a></li>
+                <li><a data-transition="none" href="#log-page">Log</a></li>
+                <li><a data-transition="none" href="#radius-page">Radius</a></li>
+                <li><a data-transition="none" href="#tools-page">Tools</a></li>
+                <li><a data-transition="none" href="#command-line-tool-page">Command Line Tool</a></li>
+                <li><a data-transition="none" href="#manual-page">Manual</a></li>
+            </ul>
+        </div>
+        
+    </div>
+{% endblock %}

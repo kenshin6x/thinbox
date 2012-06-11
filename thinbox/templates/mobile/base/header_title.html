@@ -1,0 +1,8 @@
+{% load i18n %}
+
+<h1>
+    {% if title %} {{title}} {% else %} Thinbox {% endif %}
+</h1>
+<a href="{% url home %}" data-icon="home" 
+  data-transition="none" class="ui-btn-right" 
+  data-iconpos="notext">{% trans "Home" %}</a>

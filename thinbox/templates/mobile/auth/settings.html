@@ -1,0 +1,23 @@
+{% extends "mobile/base_site.html" %}
+{% load i18n %}
+
+{% block page %}
+    <div data-role="page" data-theme="b" id="settings-page" data-add-back-btn="true">
+
+        <div data-role="header" data-theme="b">
+            {% include "mobile/base/header_title.html" with title="Settings" %}
+        </div>
+
+        <div data-role="content">
+            <ul data-role="listview" data-theme="c" data-dividertheme="a">
+              <li data-role="list-divider">{% trans "Settings"%}</li>
+	
+                <li><a href="#">{% trans "Change Your Password" %}</a></li>
+                <li><a href="#">{% trans "My Account" %}</a></li>
+                <li><a href="/admin" rel="external">{% trans "Desktop Admin" %}</a></li>
+                <li><a href="{% url mobile_logout %}" rel="external">{% trans "Logout" %}</a></li>
+            </ul>
+        </div>
+
+    </div>
+{% endblock %}

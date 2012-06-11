@@ -1,0 +1,27 @@
+{% load i18n %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Thinbox</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="shortcut icon" type="image/x-icon" href="{{STATIC_URL}}mobile/img/favicon.ico">
+
+        <link rel="stylesheet" href="{{STATIC_URL}}mobile/css/jquery.mobile.css" />
+        <link rel="stylesheet" href="{{STATIC_URL}}mobile/css/base_site.css" />
+
+        <script src="{{STATIC_URL}}mobile/js/jquery.js"></script>
+        <script src="{{STATIC_URL}}mobile/js/jquery.mobile.js"></script>
+
+        <script src="{{STATIC_URL}}mobile/js/utils.js"></script>
+
+        {% block extrahead %} {% endblock %}
+
+    </head>
+
+        <body>
+            {% block page %} {% endblock %}
+        <body>
+</html>

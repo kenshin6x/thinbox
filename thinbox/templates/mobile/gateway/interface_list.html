@@ -1,0 +1,19 @@
+{% extends "mobile/base_site.html" %}
+
+{% block page %}
+    <div data-role="page" data-theme="d" id="interface_list-page" data-add-back-btn="true">
+        
+        <div data-role="header">
+            {% include "mobile/base/header_title.html" with title="Interface" %}
+        </div>
+        
+        <div data-role="content">
+            <ul data-role="listview" data-theme="c" data-dividertheme="d">
+                <li data-role="list-divider">ether1</li>
+                <li><a href="#interfaces-page">exercito</a></li>
+
+            </ul>
+        </div>
+        
+    </div>
+{% endblock %}

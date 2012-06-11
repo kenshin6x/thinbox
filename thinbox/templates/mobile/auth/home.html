@@ -1,0 +1,28 @@
+{% extends "mobile/base_site.html" %}
+{% load i18n %}
+
+{% block page %}
+    <div data-role="page" data-theme="b" id="home-page">
+
+            <div data-role="header" data-theme="b">
+                <h1>Thinbox</h1>
+                <a href="{% url settings %}" data-icon="gear" data-transition="none" class="ui-btn-left" data-iconpos="notext">{% trans "Settings" %}</a>
+            </div>
+
+            <div data-role="content">
+                <ul data-role="listview" data-filter="true" data-theme="c" data-dividertheme="a">
+                  <li data-role="list-divider">{% trans "Gateways"%}</li>
+	
+                	{% for gateway in object_list %}
+                    <li>
+                        <a href="{% url gateway_home gateway.id %}" data-transition="none">
+                          <h3>{{gateway.name}}</h3>
+                          <p>IP: {{gateway.access_ip}}</p>
+                	      </a>
+                    </li>
+                	{% endfor %}
+                </ul>
+              </div>
+    </div>
+    
+{% endblock %}
