@@ -1,18 +1,17 @@
 # -*- coding: utf-8 -*- 
 
 from django.conf.urls.defaults import *
-from thinbox.app.api.handlers import *
+from thinbox.app.rest.handlers import *
 from piston.authentication import HttpBasicAuthentication
 
 auth = HttpBasicAuthentication(realm="Thinbox Authentication")
 
 #gateway_handler = Resource(GatewayHandler, authentication=auth)
-gateway_handler = Resource(GatewayHandler)
+validate_handler = Resource(ValidateHandler)
 
 urlpatterns = patterns('',
 
-    url(r'^gateway/(?P<gateway_id>[^/]+)/', gateway_handler),
-    url(r'^gateways/', gateway_handler),
+    url(r'^/validate/$',validate_handler),
 
 
 )

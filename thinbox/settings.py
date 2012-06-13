@@ -131,6 +131,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'thinbox.app.core',
     'thinbox.app.mobile',
+    'thinbox.app.rest',
 )
 
 LOGIN_URL = '%s/user/login' %BASEURL_ROOT

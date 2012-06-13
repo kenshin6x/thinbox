@@ -13,4 +13,5 @@ urlpatterns = patterns('',
     
     (r'^admin/', include(admin.site.urls)),
     (r'm', include('thinbox.app.mobile.urls')),
+    (r'rest', include('thinbox.app.rest.urls')),
 )
