@@ -32,6 +32,10 @@ class LoginView(View):
             if user is not None:
                 if user.is_active:
                     login(request, user)
+                    
+                    #create a session tolken for mobile devices can get access
+                    request.session[settings.MOBILE_AUTH_TOKEN_NAME] = settings.MOBILE_AUTH_TOKEN_VALUE
+                    
                     return redirect(settings.LOGIN_REDIRECT_URL)
                 else:
                     self.state = _(u"Your account is not active, please contact the site admin.")
@@ -47,6 +51,9 @@ class LoginView(View):
 class LogoutView(View):
     def get(self,request,*args,**kwargs):
         logout(request)
+        
+        del request.session[settings.MOBILE_AUTH_TOKEN_NAME]
+        
         return redirect(settings.LOGIN_URL)
 
 

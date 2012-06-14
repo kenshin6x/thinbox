@@ -104,6 +104,7 @@ MIDDLEWARE_CLASSES = (
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'thinbox.lib.middleware.require_login.RequireLoginMiddleware',
+    'thinbox.lib.middleware.mobile_detection.MobileDetectionMiddleware',
 )
 
 ROOT_URLCONF = 'thinbox.urls'
@@ -139,8 +140,15 @@ LOGIN_REDIRECT_URL = '%s/m/' %BASEURL_ROOT
 
 LOGIN_REQUIRED_URLS = (
     r'^%s/m/(.*)$' %BASEURL_ROOT,
-    r'^%s/m/(.*)$' %BASEURL_ROOT,
 )
+
+MOBILE_DEVICE_REQUIRED = (
+    r'^%s/m/(.*)$' %BASEURL_ROOT,
+    r'%s/user/login' %BASEURL_ROOT
+)
+
+MOBILE_AUTH_TOKEN_NAME = "auth_token"
+MOBILE_AUTH_TOKEN_VALUE = "e4bbe5b7a4c1eb55652965aee885dd59bd2ee7f4"
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
